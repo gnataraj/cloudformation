@@ -3,10 +3,11 @@ Resources:
   S3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
+      BucketName: gnataraj-s3-bucket
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
-        ErrorDocument: error.html            
+        ErrorDocument: error.html      
   BucketPolicy:
     Type: 'AWS::S3::BucketPolicy'
     Properties:
