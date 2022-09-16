@@ -1,9 +1,14 @@
 AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  S3BucketName:
+    Type: String
+    Default: my-default-s3-bucket
+    Description: Enter the name for your s3 bucket
 Resources:
   S3Bucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: gnataraj-s3-bucket
+      BucketName: !Ref S3BucketName
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
